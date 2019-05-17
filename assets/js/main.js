@@ -121,7 +121,7 @@ function nextTask() {
 			//		$("#accuracy-error-message").show();
 			//	}else{
 				failedValidation = trialSurvey.validateTask();
-			}				
+							
 			}else{
 				failedValidation = false;
 			}				
