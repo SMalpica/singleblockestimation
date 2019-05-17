@@ -2,12 +2,9 @@ var config = {};
 
 var state = {
     taskIndex: gup("skipto") ? parseInt(gup("skipto")) : 0,
-	blockIndex: 0,
 	imageIndex: 0,
     taskInputs: {}, 
     taskOutputs: [],
-	outlierOutputs: [],
-	outlierNumber: 0,
     assignmentId: gup("assignmentId"),
     workerId: gup("workerId"),
     hitId: gup("hitId"),
@@ -54,7 +51,8 @@ function updateTask() {
     if (config.advanced.hideIfNotAccepted && hideIfNotAccepted()) {
         return;
     }
-    $("#progress-bar").progress("set progress", state.taskIndex + 1);
+    //$("#progress-bar").progress("set progress", state.taskIndex + 1);
+	$("#progress-bar").progress("set progress", state.imageIndex + 1);
     if (isDemoSurvey()) {
         demoSurvey.showTask();
     } else {
@@ -108,7 +106,8 @@ function nextTask() {
         }  
 		else {
             //failedValidation = custom.validateTask(getTaskInputs(state.taskIndex), state.taskIndex, getTaskOutputs(state.taskIndex));
-			if(state.imageIndex==15 && state.blockIndex==1){
+			//if(state.imageIndex==15 && state.blockIndex==1){
+			if(state.imageIndex==15){
 			//	console.log("end of trial validation, press detected: ", state.pressDuringThisTrial)
 			//	if(state.taskIndex<3 && state.pressDuringThisTrial==0){
 			//		failedValidation=true;
@@ -129,19 +128,22 @@ function nextTask() {
         if (failedValidation == false) {
         	// nuevos indices para pagina web
 
-			if(state.imageIndex==15 && state.blockIndex==0){
-				state.imageIndex=0;
-				state.blockIndex++;
-			}
-			if(state.imageIndex==15 && state.blockIndex==1){
-				state.imageIndex=0;
-				state.blockIndex=0;
+			//if(state.imageIndex==15 && state.blockIndex==0){
+			//	state.imageIndex=0;
+			//	state.blockIndex++;
+			//}
+			//if(state.imageIndex==15 && state.blockIndex==1){
+			//	state.imageIndex=0;
+			//	state.blockIndex=0;
+			//	saveTaskData();
+			//	console.log("Current collected data", state.taskOutputs);
+			//	trialSurvey.hideTrialSurvey();
+			//	state.taskIndex++;
+			//		//state.taskIndex = 10;
+			//	state.pressDuringThisTrial=0;
+			//}
+			if(state.imageIndex==15){
 				saveTaskData();
-				console.log("Current collected data", state.taskOutputs);
-				trialSurvey.hideTrialSurvey();
-				state.taskIndex++;
-					//state.taskIndex = 10;
-				state.pressDuringThisTrial=0;
 			}
             updateTask();
             clearMessage();

@@ -16,15 +16,15 @@
         "images": []
     },
     "hitCreation": {
-        "title": "Outdoor scenes",
-        "description": "Find the outdoor scenes in several blocks of images",
+        "title": "Images block",
+        "description": "Watch a block of images and answer some questions about it",
         "numTasks": 30,
         "numAssignments": 1,
-        "rewardAmount": "2.00",
-        "keywords": "outdoor, detection, images, 2D, outlier",
+        "rewardAmount": "0.20",
+        "keywords": "images, 2D, simple",
         "duration": 4000,
         "lifetime": 86400,
-        "taskUrl": "https://smalpica.github.io/",
+        "taskUrl": "https://smalpica.github.io/singleblockestimation/",
         "variants": []
     },
     "advanced": {

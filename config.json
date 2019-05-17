@@ -1,20 +1,16 @@
 {
     "meta": {
-        "title": "Image Outliers",
-        "description": "Look at a series of images and detect outdoor scenes.",
+        "title": "Images block",
+        "description": "Look at a series of images and answer a few simple questions about it.",
         "disclaimer": "Your participation in this research is voluntary. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you."
     },
     "instructions": {
         "simple": "Press \"T\" when you see an outdoor scene.",
         "steps": [
-            "You will be shown several paired blocks of images.",
-            "During each block the images will change automatically after a fixed time.",
-            "You will have to press \"T\" as soon as you recognize an outdoor scene", 
-            "Indoor scenes refer to pictures taken from the inside of any type of building: houses, museums, libraries, shops, etc.",
-            "Outdoor scenes refer to pictures taken outside a building: forests, mountains, rivers, etc.",
-			"The experiment will end if the performance is too low"
+            "You will be shown several images.",
+            "The images will change automatically after a fixed time.",
+			"After seeing the images, you will have to answer to some simple questions."
         ],
-        "images": ["demo_face_sentinels.gif"]
     },
     "advanced": {
         "includeDemographicSurvey": true,
