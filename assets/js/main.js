@@ -120,8 +120,7 @@ function nextTask() {
 			//		trialSurvey.hideTrialSurvey();
 			//		$("#accuracy-error-message").show();
 			//	}else{
-				failedValidation = trialSurvey.validateTask();
-							
+				failedValidation = trialSurvey.validateTask();							
 			}else{
 				failedValidation = false;
 			}				
