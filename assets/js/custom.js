@@ -460,10 +460,10 @@ function preloadImages(data) {
   var cross = new Image(); // fixation cross image
 
   // populates arrays to store the Image elements
-  data.forEach(function(elt, i) {
-    elt.images.forEach(function(img,j){
-		IMAGES.push(new Image());
-	});
+  //data.forEach(function(elt, i) {
+  //  elt.images.forEach(function(img,j){
+//		IMAGES.push(new Image());
+	//});
 	//elt.firstblock.images.forEach(function(elt, j){
 	//	IMAGES.push(new Image());
 	//	//console.log(elt)
@@ -472,7 +472,10 @@ function preloadImages(data) {
 	//	IMAGES.push(new Image());
 	//});
     //CHAR_IMAGES.push(new Image());
-  });
+  //});
+  data.images.forEach(function(img,j){
+		IMAGES.push(new Image());
+	});
 
 
   // callback for when all images have loaded
@@ -500,17 +503,21 @@ function preloadImages(data) {
   // start images loading
   cross.src = FIXATION_CROSS;
   $("#img-cross").attr("src", FIXATION_CROSS);
-  data.forEach(function(e, i) {
-    e.images.forEach(function(imgPath, j){
-		//console.log("image path: ",imgPath);
-		IMAGES[j].src =  imgPath;
-	}); 
+  //data.forEach(function(e, i) {
+  //  e.images.forEach(function(imgPath, j){
+//		//console.log("image path: ",imgPath);
+//		IMAGES[j].src =  imgPath;
+//	}); 
 	//e.secondblock.images.forEach(function(imgPath, j){
 	//	IMAGES[i*PARAMS.NUM_IMGS_BLOCK*2+PARAMS.NUM_IMGS_BLOCK+j].src =  imgPath;
 	//});
     //IMAGES[i].src = IMAGE_BASE_PATH + elt.image;
     //CHAR_IMAGES[i].src = IMAGE_BASE_PATH + elt.codechart;
-  });
+//  });
+  data.images.forEach(function(imgPath, j){
+		//console.log("image path: ",imgPath);
+		IMAGES[j].src =  imgPath;
+	}); 
 	//console.log(IMAGES[1]);
 }
 
