@@ -434,6 +434,7 @@ function externalSubmit(submitUrl, results) {
 /* MAIN */
 $(document).ready(function() {
     $.getJSON("config.json").done(function(data) {
+		console.log("loading config");
         config = data;
         config.meta.aggregate = true;
         state.taskOutputs = {};
