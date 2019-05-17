@@ -461,13 +461,16 @@ function preloadImages(data) {
 
   // populates arrays to store the Image elements
   data.forEach(function(elt, i) {
-    elt.firstblock.images.forEach(function(elt, j){
-		IMAGES.push(new Image());
-		//console.log(elt)
-	});
-	elt.secondblock.images.forEach(function(elt, j){
+    elt.images.forEach(function(img,j){
 		IMAGES.push(new Image());
 	});
+	//elt.firstblock.images.forEach(function(elt, j){
+	//	IMAGES.push(new Image());
+	//	//console.log(elt)
+	//});
+	//elt.secondblock.images.forEach(function(elt, j){
+	//	IMAGES.push(new Image());
+	//});
     //CHAR_IMAGES.push(new Image());
   });
 
@@ -498,13 +501,13 @@ function preloadImages(data) {
   cross.src = FIXATION_CROSS;
   $("#img-cross").attr("src", FIXATION_CROSS);
   data.forEach(function(e, i) {
-    e.firstblock.images.forEach(function(imgPath, j){
+    e.images.forEach(function(imgPath, j){
 		//console.log("image path: ",imgPath);
-		IMAGES[i*PARAMS.NUM_IMGS_BLOCK*2+j].src =  imgPath;
+		IMAGES[j].src =  imgPath;
 	});
-	e.secondblock.images.forEach(function(imgPath, j){
-		IMAGES[i*PARAMS.NUM_IMGS_BLOCK*2+PARAMS.NUM_IMGS_BLOCK+j].src =  imgPath;
-	});
+	//e.secondblock.images.forEach(function(imgPath, j){
+	//	IMAGES[i*PARAMS.NUM_IMGS_BLOCK*2+PARAMS.NUM_IMGS_BLOCK+j].src =  imgPath;
+	//});
     //IMAGES[i].src = IMAGE_BASE_PATH + elt.image;
     //CHAR_IMAGES[i].src = IMAGE_BASE_PATH + elt.codechart;
   });
