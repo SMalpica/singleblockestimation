@@ -504,7 +504,7 @@ function preloadImages(data) {
     e.images.forEach(function(imgPath, j){
 		//console.log("image path: ",imgPath);
 		IMAGES[j].src =  imgPath;
-	});
+	}); 
 	//e.secondblock.images.forEach(function(imgPath, j){
 	//	IMAGES[i*PARAMS.NUM_IMGS_BLOCK*2+PARAMS.NUM_IMGS_BLOCK+j].src =  imgPath;
 	//});
