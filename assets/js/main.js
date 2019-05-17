@@ -446,7 +446,7 @@ $(document).ready(function() {
 			trialSurvey.loadTrialSurvey();
             setupButtons(config);
         });
-		console.log("Changing number of subject files");
+		console.log("Changing next task");
 		//$(document).keypress(function(e){							//CUSTOM TRACK OF KEY PRESSES
 		//	var pressT=(String.fromCharCode(e.which)=="t" ? 1 : 0);
 		//	pressT=true;
