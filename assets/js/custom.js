@@ -13,7 +13,7 @@ var PARAMS = {
   IMG_HEIGHT: 700 , // max img height
 
   N_BUCKETS: 1,
-  N_SUBJ_FILES: 5,
+  N_SUBJ_FILES: 2,
   
   NUM_IMGS_BLOCK: 15,
   NUM_BLOCKS_TRIAL: 2,
