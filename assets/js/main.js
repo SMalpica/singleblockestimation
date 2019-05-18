@@ -149,9 +149,9 @@ function nextTask() {
 			//}
 			if(state.imageIndex==15){
 				state.imageIndex=0;
-				trialSurvey.hideTrialSurvey();
-				state.taskIndex++;
+				trialSurvey.hideTrialSurvey();				
 				saveTaskData();
+				state.taskIndex++;
 			}
             updateTask();
             clearMessage();
