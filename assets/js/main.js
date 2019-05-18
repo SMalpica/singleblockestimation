@@ -17,11 +17,13 @@ function saveTaskData() {
     var data;
     if (isDemoSurvey()) {
         data = demoSurvey.collectData();
+		console.log("collecting demo survey data");
     } else {
         //data = custom.collectData(getTaskInputs(state.taskIndex), state.taskIndex, getTaskOutputs(state.taskIndex));
 		//if(blockIndex==1 && imageIndex==15){
 		//}
 		data = trialSurvey.collectData();
+		console.log("collecting trial survey data");
 		//$('#trial-survey').load("assets/html/trial_survey.html");
     }
     //if (config.meta.aggregate) {
@@ -30,9 +32,11 @@ function saveTaskData() {
         // TODO: figure out how best to include the demo survey data in the results? 
 	if(state.taskIndex < config.meta.numTrials){
 		state.taskOutputs[state.taskIndex] = data;
+		console.log("saving trial survey data")
 	}
 	else{
 		state.taskOutputs[state.taskIndex+1] = data;
+		console.log("saving demographic survey data")
 	}
 		
     //}
@@ -445,6 +449,7 @@ $(document).ready(function() {
         custom.loadTasks().done(function(taskInputData) {
             config.meta.numSubtasks = taskInputData[1];
 			//config.meta.numTrials = taskInputData[1]/(taskInputData[2]*taskInputData[3]);
+			config.meta.numTrials = taskInputData[1];
 			config.meta.numImages = taskInputData[2];
             state.taskInputs = taskInputData[0];
             populateMetadata(config);
