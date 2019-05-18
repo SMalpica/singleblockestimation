@@ -1,10 +1,10 @@
 <div class="row">
     <div class="left aligned fourteen wide column">
-        <h2>Answer the questions</h2>
+        <h2>Answer all the questions</h2>
         <!--<h4> Before you submit the task, please take a moment to fill out this survey.</h4>-->
         <div class="ui form" id="trial-survey-form" method="post">
 
-            <div class="inline fields">
+            <!--<div class="inline fields">
                 <label>Which block seemed longer to you?</label>
                 <div class="field">
                     <div class="ui radio checkbox">
@@ -18,12 +18,17 @@
                         <label>Second block</label>
                     </div>
                 </div>
-                <!--<div class="field">
+                <div class="field">
                     <div class="ui radio checkbox">
                         <input type="radio" name="gender" id="genderOther" value="unspecified"> 
                         <label>Prefer not to say</label>
                     </div>
-                </div>-->
+                </div>
+            </div>-->
+			
+			<div class="field">
+                <label>Estimate the images block duration (in seconds)</label>
+                <textarea name="estimationBlock1" rows="1" placeholder="How long was the block?"></textarea>
             </div>
 
             <div class="inline fields">
@@ -231,17 +236,14 @@
 
 			<!--todo: change this free fields to number estimation in seconds-->
 
-            <div class="field">
-                <label>Estimate block 1 duration</label>
-                <textarea name="estimationBlock1" rows="1" placeholder="How long was the first block?"></textarea>
-            </div>
+            
 			
-            <div class="field">
+            <!--<div class="field">
                 <label>Estimate block 2 duration</label>
                 <textarea name="estimationBlock2" rows="1" placeholder="How long was the second block?"></textarea>
             </div>
 
-            <div class="ui error message"></div>
+            <div class="ui error message"></div>-->
 
 
         </div>

@@ -23,18 +23,18 @@ var trialSurvey = {
         $('#trial-survey-form')
           .form({
             fields: {
-                blockAnswer: {
-                    identifier: 'blockAnswer',
-                    rules: [{
-                        type: 'checked',
-                        prompt: 'Please choose one of the blocks'
-                    }]
-                }, 
+                //blockAnswer: {
+                //    identifier: 'blockAnswer',
+                 //   rules: [{
+                 //       type: 'checked',
+                 //       prompt: 'Please choose one of the blocks'
+                 //   }]
+                //}, 
                 confidence: {
                     identifier: 'confidence',
                     rules: [{
                         type: 'checked',
-                        prompt: 'Please select an answer'
+                        prompt: 'Please answer all the questions'
                     }]
                 }
             }
@@ -62,15 +62,15 @@ var trialSurvey = {
 		//document.getElementById("confidence6").checked = false;
 		//document.getElementById("confidence7").checked = false;
 		
-	    var blockAnswer = $("input[type=radio][name=blockAnswer]:checked").val();
+	    //var blockAnswer = $("input[type=radio][name=blockAnswer]:checked").val();
 	    var confidence = $("input[type=radio][name=confidence]:checked").val();
 	    var estimation1 = htmlEscape($("textarea[name=estimationBlock1]").val());
-		var estimation2 = htmlEscape($("textarea[name=estimationBlock2]").val());
+		//var estimation2 = htmlEscape($("textarea[name=estimationBlock2]").val());
 		
 		//$("#select_all").prop('checked', false)
 		
-		$("#firstBlock").prop('checked', false);
-		$("#secondBlock").prop('checked', false);
+		//$("#firstBlock").prop('checked', false);
+		//$("#secondBlock").prop('checked', false);
 		$("#confidence1").prop('checked', false);
 		$("#confidence2").prop('checked', false);
 		$("#confidence3").prop('checked', false);
@@ -80,15 +80,15 @@ var trialSurvey = {
 		$("#confidence7").prop('checked', false);
 	    //$("input[type=radio][name=confidence]:checked").removeAttr("checked");
 	    $("textarea[name=estimationBlock1]").val("");
-		$("textarea[name=estimationBlock2]").val("");
+		//$("textarea[name=estimationBlock2]").val("");
 
-		console.log("patata2")
+		//console.log("patata2")
 
 	    var data = {
-	        blockAnswer: blockAnswer,
+	        //blockAnswer: blockAnswer,
 			confidence: confidence,
 			estimation1: estimation1,
-			estimation2: estimation2
+			//estimation2: estimation2
 	    }; 
 
         return {
@@ -98,8 +98,13 @@ var trialSurvey = {
 	validateTask: function() {
 		console.log("validating trial survey");
 		$('#trial-survey-form').form('validate form');
+		//console.log()
+		//if(){
+			//alert("Please fill up all the answers");
+			//return false;
+		//}
 		// falsey value indicates no error...
-		if (!$('#trial-survey-form').form('is valid')) {
+		if (!$('#trial-survey-form').form('is valid') || $("textarea[name=estimationBlock1]").val()=="") {
 			return {errorMessage: ""}
 		}
 		return false;

@@ -130,8 +130,8 @@ var custom = {
       console.log("CC exposure time:", PARAMS.NUM_MSEC_CHAR);
       console.log("S exposure time:", PARAMS.NUM_MSEC_SENTINEL);
 
-
-      return [tasks, tasks.length, PARAMS.NUM_IMGS_BLOCK, PARAMS.NUM_BLOCKS_TRIAL];
+	  //console.log(tasks.length);
+      return [tasks, 1, PARAMS.NUM_IMGS_BLOCK];
     });
   },
 
@@ -348,11 +348,12 @@ function showImage(taskInput, taskIndex, imageIndex, blockIndex, taskOutput) {
   $('.subtask').hide();
   $("#next-button").hide();
   //console.log("task index: ",taskIndex);
-  var imgFile = IMAGES[taskIndex*PARAMS.NUM_IMGS_BLOCK*2+blockIndex*PARAMS.NUM_IMGS_BLOCK+imageIndex].src;
+  var imgFile = IMAGES[imageIndex].src;
   //console.log(imgFile)
   $("#img-main").attr("src", imgFile);
   $("#show-image-subtask").show();
   if(imageIndex<PARAMS.NUM_IMGS_BLOCK-1){
+	  //console.log("show next image");
 	  setTimeout(function(){$("#next-button").click()}, PARAMS.NUM_MSEC_IMAGE);
   }
   else if (imageIndex==PARAMS.NUM_IMGS_BLOCK-1){

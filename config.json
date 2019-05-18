@@ -1,16 +1,16 @@
 {
     "meta": {
-        "title": "Images block",
-        "description": "Look at a series of images and answer a few simple questions about it.",
+        "title": "Images Block",
+        "description": "Look at a series of images and answer questions about them",
         "disclaimer": "Your participation in this research is voluntary. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you."
     },
     "instructions": {
-        "simple": "Press \"T\" when you see an outdoor scene.",
+        "simple": "Look at the images",
         "steps": [
-            "You will be shown several images.",
+            "You will be shown a block of images.",
             "The images will change automatically after a fixed time.",
-			"After seeing the images, you will have to answer to some simple questions."
-        ],
+            "After seeing the images you will be asked several questions you will have to answer."
+        ]
     },
     "advanced": {
         "includeDemographicSurvey": true,

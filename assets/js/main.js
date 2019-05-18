@@ -93,6 +93,7 @@ function updateTask() {
 
 function nextTask() {
 	//console.log("moving to next task");
+	//console.log("numsubtasks: ",config.meta.numSubtasks);
     if (state.taskIndex < (config.meta.numSubtasks + config.advanced.includeDemographicSurvey) - 1) {
         //TODO: change this numbers (15, 1) for config.meta.params
 		if(state.imageIndex<15){
@@ -143,6 +144,9 @@ function nextTask() {
 			//	state.pressDuringThisTrial=0;
 			//}
 			if(state.imageIndex==15){
+				state.imageIndex=0;
+				trialSurvey.hideTrialSurvey();
+				state.taskIndex++;
 				saveTaskData();
 			}
             updateTask();
@@ -307,16 +311,16 @@ function populateMetadata(config) {
         $(".instructions-steps").append($("<li>" + config.instructions.steps[i] + "</li>"));
     }
     $(".disclaimer-text").html(config.meta.disclaimer);
-    if (config.instructions.images.length > 0) {
-        $("#sample-task").css("display", "block");
-        var instructionsIndex = Math.floor(Math.random() * config.instructions.images.length);
-        var imgEle = "<img class='instructions-img' src='";
-        imgEle += config.instructions.images[instructionsIndex] + "'></img>";
-        $("#instructions-demo").append($(imgEle));
+    //if (config.instructions.images.length > 0) {
+     //   $("#sample-task").css("display", "block");
+     //   var instructionsIndex = Math.floor(Math.random() * config.instructions.images.length);
+     //   var imgEle = "<img class='instructions-img' src='";
+     //   imgEle += config.instructions.images[instructionsIndex] + "'></img>";
+     //   $("#instructions-demo").append($(imgEle));
 
-    }
+    //}
     $("#progress-bar").progress({
-        total: config.meta.numSubtasks + config.advanced.includeDemographicSurvey,
+        total: config.meta.numImages + config.advanced.includeDemographicSurvey,
     });
 }
 
@@ -440,7 +444,8 @@ $(document).ready(function() {
         state.taskOutputs = {};
         custom.loadTasks().done(function(taskInputData) {
             config.meta.numSubtasks = taskInputData[1];
-			config.meta.numTrials = taskInputData[1]/(taskInputData[2]*taskInputData[3]);
+			//config.meta.numTrials = taskInputData[1]/(taskInputData[2]*taskInputData[3]);
+			config.meta.numImages = taskInputData[2];
             state.taskInputs = taskInputData[0];
             populateMetadata(config);
             demoSurvey.maybeLoadSurvey(config);
